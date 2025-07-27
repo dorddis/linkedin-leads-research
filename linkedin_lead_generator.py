@@ -18,17 +18,21 @@ import sqlite3
 import time
 from datetime import datetime
 from exa_py import Exa
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # =============================================================================
-# API CONFIGURATION - REPLACE THESE PLACEHOLDER KEYS WITH YOUR ACTUAL API KEYS
+# API CONFIGURATION - LOAD FROM ENVIRONMENT VARIABLES
 # =============================================================================
 
 # Groq API configuration
-GROQ_API_KEY = 'your_groq_api_key_here'
+GROQ_API_KEY = os.getenv('GROQ_API_KEY', 'your_groq_api_key_here')
 GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
 # Exa API configuration
-EXA_API_KEY = 'your_exa_api_key_here'
+EXA_API_KEY = os.getenv('EXA_API_KEY', 'your_exa_api_key_here')
 exa = Exa(api_key=EXA_API_KEY)
 
 # Database configuration

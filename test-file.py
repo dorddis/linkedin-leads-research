@@ -2,14 +2,19 @@
 """
 Exa API Test Script
 This script tests the Exa API functionality with LinkedIn search queries.
-Before running, make sure to replace 'your_exa_api_key_here' with your actual Exa API key.
+Before running, make sure to set up your .env file with your Exa API key.
 """
 
+import os
 from exa_py import Exa
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize Exa client with your API key
 # Get your API key from: https://exa.ai/
-exa = Exa(api_key = "your_exa_api_key_here")
+exa = Exa(api_key = os.getenv('EXA_API_KEY', 'your_exa_api_key_here'))
 
 # Example: Search for Credit Portfolio Managers at LIC
 # This demonstrates how to create a dorked LinkedIn search query

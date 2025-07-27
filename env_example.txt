@@ -1,0 +1,10 @@
+# LinkedIn Lead Research Generator - Environment Variables
+# Copy this file to .env and fill in your actual API keys
+
+# Groq API Configuration
+# Get your API key from: https://console.groq.com/
+GROQ_API_KEY=your_groq_api_key_here
+
+# Exa API Configuration  
+# Get your API key from: https://exa.ai/
+EXA_API_KEY=your_exa_api_key_here 

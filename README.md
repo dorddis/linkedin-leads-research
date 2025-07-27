@@ -40,25 +40,33 @@ The project requires the following Python packages:
 - `exa_py` - For Exa search API integration
 - `requests` - For HTTP API calls
 - `pandas` - For data manipulation and Excel export
+- `python-dotenv` - For environment variable management
+- `openpyxl` - For Excel file creation
 - `sqlite3` - For database operations (built-in)
 - `json` - For JSON parsing (built-in)
 - `datetime` - For timestamp handling (built-in)
 
 ## ⚙️ Configuration
 
-### API Keys Setup
+### Environment Variables Setup
 
-You need to configure two API keys in the `linkedin_lead_generator.py` file:
+The project uses environment variables for secure API key management. Follow these steps:
 
-1. **Groq API Key**: Replace `'your_groq_api_key_here'` with your actual Groq API key
-   ```python
-   GROQ_API_KEY = 'your_actual_groq_api_key'
+1. **Copy the example environment file**:
+   ```bash
+   cp env_example.txt .env
    ```
 
-2. **Exa API Key**: Replace `'your_exa_api_key_here'` with your actual Exa API key
-   ```python
-   EXA_API_KEY = 'your_actual_exa_api_key'
+2. **Edit the `.env` file** and add your actual API keys:
+   ```bash
+   # Groq API Configuration
+   GROQ_API_KEY=your_actual_groq_api_key_here
+   
+   # Exa API Configuration
+   EXA_API_KEY=your_actual_exa_api_key_here
    ```
+
+**Important**: Never commit your `.env` file to version control. It's already included in `.gitignore`.
 
 ### Getting API Keys
 
@@ -197,10 +205,11 @@ In `linkedin_lead_generator.py`, you can modify:
 
 ### Common Issues
 
-1. **API Key Errors**: Ensure you've replaced placeholder API keys with actual keys
-2. **Rate Limiting**: If you hit rate limits, wait before retrying
-3. **Database Errors**: Check file permissions in the project directory
-4. **Import Errors**: Ensure all dependencies are installed via `pip install -r requirements.txt`
+1. **API Key Errors**: Ensure you've set up your `.env` file with actual API keys
+2. **Environment Variable Errors**: Make sure you've copied `env_example.txt` to `.env` and filled in your keys
+3. **Rate Limiting**: If you hit rate limits, wait before retrying
+4. **Database Errors**: Check file permissions in the project directory
+5. **Import Errors**: Ensure all dependencies are installed via `pip install -r requirements.txt`
 
 ### Error Messages
 
